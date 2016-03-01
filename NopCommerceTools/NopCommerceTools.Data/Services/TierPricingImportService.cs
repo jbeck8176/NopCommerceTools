@@ -27,7 +27,7 @@ namespace NopCommerceTools.Data.Services
                     var splitData = fileData[0].Split(',');
                     if (splitData.Count() == 3)
                     {
-                        if (string.IsNullOrEmpty(splitData[0]))
+                        if (!string.IsNullOrEmpty(splitData[0]))
                         {
                             var minQty = -1;
                             if (int.TryParse(splitData[1], out minQty))
@@ -66,7 +66,8 @@ namespace NopCommerceTools.Data.Services
         public void ProcessTierPricingForItem(List<Models.TierPricingImportModel> items)
         {
             //find the product id for item from the database
-            var productId = dbContext.Products.FirstOrDefault(x => x.Sku.ToLower() == items.FirstOrDefault().Sku.ToLower()).Id;
+            var itemSku = items.FirstOrDefault().Sku.ToLower();
+            var productId = dbContext.Products.FirstOrDefault(x => x.Sku.ToLower() == itemSku).Id;
 
             //remove the old pricing data for the sku
             dbContext.TierPrices.RemoveRange(dbContext.TierPrices.Where(x => x.ProductId == productId));
@@ -79,9 +80,14 @@ namespace NopCommerceTools.Data.Services
                 dbContext.TierPrices.Add(new Models.TierPrice() {
                     Price = item.Price,
                     ProductId = productId,
-                    Quantity = item.MinQty
+                    Quantity = item.MinQty,
+                    StoreId = 1,
+                    CustomerRoleId = 7
                 });
             }
+
+            dbContext.Products.Find(productId).HasTierPrices = true;
+
             dbContext.SaveChanges();
         }
     }
