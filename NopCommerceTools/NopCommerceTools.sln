@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NopCommerceTools", "NopCommerceTools\NopCommerceTools.csproj", "{9BEFFF7C-1A24-49E9-8B35-CFC059A7A025}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NopCommerceTools.Data", "NopCommerceTools.Data\NopCommerceTools.Data.csproj", "{27AE83BF-1AC2-45B1-9971-0D5645B3E4D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NopCommerceTools.TierPriceImport", "NopCommerceTools.TierPriceImport\NopCommerceTools.TierPriceImport.csproj", "{28C38059-7EE4-4A3C-BEE5-4CF9A3B00646}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9BEFFF7C-1A24-49E9-8B35-CFC059A7A025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9BEFFF7C-1A24-49E9-8B35-CFC059A7A025}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9BEFFF7C-1A24-49E9-8B35-CFC059A7A025}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9BEFFF7C-1A24-49E9-8B35-CFC059A7A025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27AE83BF-1AC2-45B1-9971-0D5645B3E4D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27AE83BF-1AC2-45B1-9971-0D5645B3E4D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27AE83BF-1AC2-45B1-9971-0D5645B3E4D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27AE83BF-1AC2-45B1-9971-0D5645B3E4D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28C38059-7EE4-4A3C-BEE5-4CF9A3B00646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28C38059-7EE4-4A3C-BEE5-4CF9A3B00646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28C38059-7EE4-4A3C-BEE5-4CF9A3B00646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28C38059-7EE4-4A3C-BEE5-4CF9A3B00646}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
